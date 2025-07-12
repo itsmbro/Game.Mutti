@@ -322,8 +322,6 @@ def restart_game():
     st.session_state.score = 0
     st.session_state.current_quiz = None
     st.session_state.show_feedback = False
-
-
 # ---------- UI ----------
 st.markdown("<h1 style='text-align: center; color: #4CAF50;'>🎯 Trivia Quiz per iPad</h1>", unsafe_allow_html=True)
 
@@ -347,6 +345,7 @@ if st.session_state.category is None:
         if st.button("🏛️ Storia"):
             st.session_state.category = "Storia"
             next_question()
+
 else:
     st.markdown(f"<h3 style='color: #2196F3;'>Categoria: {st.session_state.category}</h3>", unsafe_allow_html=True)
     quiz = st.session_state.current_quiz
@@ -354,27 +353,37 @@ else:
 
     answer = st.radio("Scegli una risposta:", quiz["options"], index=None)
 
+    # Inizializza flag verifica
     if "verify_clicked" not in st.session_state:
-    st.session_state.verify_clicked = False
+        st.session_state.verify_clicked = False
 
-if not st.session_state.show_feedback:
-    if st.button("Verifica", key="verify_button") and answer:
-        st.session_state.show_feedback = True
-        st.session_state.verify_clicked = True
-        if answer == quiz["answer"]:
-            st.session_state.score += 1
-else:
-    if st.session_state.verify_clicked:
+    # Mostra bottone Verifica
+    if not st.session_state.show_feedback:
+        if st.button("Verifica", key="verify_button") and answer:
+            st.session_state.show_feedback = True
+            st.session_state.verify_clicked = True
+            if answer == quiz["answer"]:
+                st.session_state.score += 1
+
+    # Mostra risultato se già verificato
+    if st.session_state.show_feedback and st.session_state.verify_clicked:
         if answer == quiz["answer"]:
             st.markdown("<div class='correct'>✅ Corretto!</div>", unsafe_allow_html=True)
         else:
-            st.markdown(f"<div class='wrong'>❌ Sbagliato! La risposta giusta era: <b>{quiz['answer']}</b></div>", unsafe_allow_html=True)
+            st.markdown(
+                f"<div class='wrong'>❌ Sbagliato! La risposta giusta era: <b>{quiz['answer']}</b></div>",
+                unsafe_allow_html=True
+            )
 
         if st.button("➡️ Prossima domanda", key="next_question"):
             next_question()
             st.session_state.verify_clicked = False
 
-    st.markdown(f"<br><div style='text-align:center; font-size:1.1em;'>Punteggio: <b>{st.session_state.score}</b></div>", unsafe_allow_html=True)
+    # Punteggio e reset
+    st.markdown(
+        f"<br><div style='text-align:center; font-size:1.1em;'>Punteggio: <b>{st.session_state.score}</b></div>",
+        unsafe_allow_html=True
+    )
     st.markdown("---")
     if st.button("🔁 Rinizia"):
         restart_game()
