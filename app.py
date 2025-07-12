@@ -354,18 +354,25 @@ else:
 
     answer = st.radio("Scegli una risposta:", quiz["options"], index=None)
 
-    if not st.session_state.show_feedback:
-        if st.button("Verifica"):
-            if answer:
-                st.session_state.show_feedback = True
-                if answer == quiz["answer"]:
-                    st.session_state.score += 1
-                    st.success("✅ Corretto!")
-                else:
-                    st.error(f"❌ Sbagliato! La risposta giusta era: **{quiz['answer']}**")
-    else:
-        if st.button("➡️ Prossima domanda"):
+    if "verify_clicked" not in st.session_state:
+    st.session_state.verify_clicked = False
+
+if not st.session_state.show_feedback:
+    if st.button("Verifica", key="verify_button") and answer:
+        st.session_state.show_feedback = True
+        st.session_state.verify_clicked = True
+        if answer == quiz["answer"]:
+            st.session_state.score += 1
+else:
+    if st.session_state.verify_clicked:
+        if answer == quiz["answer"]:
+            st.markdown("<div class='correct'>✅ Corretto!</div>", unsafe_allow_html=True)
+        else:
+            st.markdown(f"<div class='wrong'>❌ Sbagliato! La risposta giusta era: <b>{quiz['answer']}</b></div>", unsafe_allow_html=True)
+
+        if st.button("➡️ Prossima domanda", key="next_question"):
             next_question()
+            st.session_state.verify_clicked = False
 
     st.markdown(f"<br><div style='text-align:center; font-size:1.1em;'>Punteggio: <b>{st.session_state.score}</b></div>", unsafe_allow_html=True)
     st.markdown("---")
