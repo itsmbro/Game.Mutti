@@ -29,76 +29,271 @@ st.markdown(
 )
 
 # ---------- DATABASE DOMANDE ----------
+
+
+
+
+
+
+
+
+
 quiz_db = {
     "Scienza": [
         {
             "question": "Qual è la particella elementare che ha carica negativa?",
-            "options": ["Protone", "Elettrone", "Neutrone", "Quark"],
+            "options": [
+                "Protone",
+                "Elettrone",
+                "Neutrone",
+                "Quark"
+            ],
             "answer": "Elettrone"
         },
         {
             "question": "Quale pianeta è il più caldo del sistema solare?",
-            "options": ["Venere", "Mercurio", "Giove", "Marte"],
+            "options": [
+                "Venere",
+                "Mercurio",
+                "Giove",
+                "Marte"
+            ],
             "answer": "Venere"
         },
         {
             "question": "Qual è la formula chimica dell'acqua?",
-            "options": ["H2O", "CO2", "NaCl", "O2"],
+            "options": [
+                "H2O",
+                "CO2",
+                "NaCl",
+                "O2"
+            ],
             "answer": "H2O"
         },
+        {
+            "question": "Qual è la funzione dei globuli rossi?",
+            "options": [
+                "Difendere il corpo",
+                "Trasportare ossigeno",
+                "Coagulare il sangue",
+                "Produrre anticorpi"
+            ],
+            "answer": "Trasportare ossigeno"
+        },
+        {
+            "question": "Cosa misura un sismografo?",
+            "options": [
+                "Temperatura",
+                "Pressione",
+                "Movimenti della terra",
+                "Umidità"
+            ],
+            "answer": "Movimenti della terra"
+        },
+        {
+            "question": "Quale organo del corpo umano produce l'insulina?",
+            "options": [
+                "Fegato",
+                "Pancreas",
+                "Milza",
+                "Cuore"
+            ],
+            "answer": "Pancreas"
+        }
     ],
     "Matematica": [
         {
             "question": "Quanto fa 7 × 8?",
-            "options": ["54", "56", "58", "60"],
+            "options": [
+                "54",
+                "56",
+                "58",
+                "60"
+            ],
             "answer": "56"
         },
         {
             "question": "Qual è il numero primo più piccolo?",
-            "options": ["0", "1", "2", "3"],
+            "options": [
+                "0",
+                "1",
+                "2",
+                "3"
+            ],
             "answer": "2"
         },
         {
             "question": "Quanto vale π (pi greco) approssimato?",
-            "options": ["2.14", "3.14", "4.13", "5.12"],
+            "options": [
+                "2.14",
+                "3.14",
+                "4.13",
+                "5.12"
+            ],
             "answer": "3.14"
         },
+        {
+            "question": "Quanto fa la radice quadrata di 81?",
+            "options": [
+                "7",
+                "8",
+                "9",
+                "10"
+            ],
+            "answer": "9"
+        },
+        {
+            "question": "Qual è il risultato di 12 ÷ 4?",
+            "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "answer": "3"
+        },
+        {
+            "question": "Cosa rappresenta il simbolo %?",
+            "options": [
+                "Divisione",
+                "Moltiplicazione",
+                "Percentuale",
+                "Sottrazione"
+            ],
+            "answer": "Percentuale"
+        }
     ],
     "Geografia": [
         {
             "question": "Qual è la capitale del Canada?",
-            "options": ["Toronto", "Vancouver", "Ottawa", "Montreal"],
+            "options": [
+                "Toronto",
+                "Vancouver",
+                "Ottawa",
+                "Montreal"
+            ],
             "answer": "Ottawa"
         },
         {
             "question": "Qual è il deserto più grande al mondo?",
-            "options": ["Sahara", "Antartide", "Gobi", "Kalahari"],
+            "options": [
+                "Sahara",
+                "Antartide",
+                "Gobi",
+                "Kalahari"
+            ],
             "answer": "Antartide"
         },
         {
             "question": "Dove si trova il monte Everest?",
-            "options": ["India", "Nepal", "Cina", "Pakistan"],
+            "options": [
+                "India",
+                "Nepal",
+                "Cina",
+                "Pakistan"
+            ],
             "answer": "Nepal"
         },
+        {
+            "question": "In quale continente si trova il fiume Nilo?",
+            "options": [
+                "Asia",
+                "America",
+                "Africa",
+                "Europa"
+            ],
+            "answer": "Africa"
+        },
+        {
+            "question": "Qual è la capitale dell’Australia?",
+            "options": [
+                "Sydney",
+                "Melbourne",
+                "Canberra",
+                "Perth"
+            ],
+            "answer": "Canberra"
+        },
+        {
+            "question": "Quale nazione ha la maggiore popolazione al mondo?",
+            "options": [
+                "India",
+                "USA",
+                "Cina",
+                "Russia"
+            ],
+            "answer": "India"
+        }
     ],
     "Storia": [
         {
             "question": "Chi era il primo imperatore romano?",
-            "options": ["Cesare", "Augusto", "Nerone", "Traiano"],
+            "options": [
+                "Cesare",
+                "Augusto",
+                "Nerone",
+                "Traiano"
+            ],
             "answer": "Augusto"
         },
         {
             "question": "In quale anno cadde l’Impero Romano d’Occidente?",
-            "options": ["395", "410", "476", "500"],
+            "options": [
+                "395",
+                "410",
+                "476",
+                "500"
+            ],
             "answer": "476"
         },
         {
             "question": "Chi scoprì l’America nel 1492?",
-            "options": ["Magellano", "Cristoforo Colombo", "Amerigo Vespucci", "Vasco da Gama"],
+            "options": [
+                "Magellano",
+                "Cristoforo Colombo",
+                "Amerigo Vespucci",
+                "Vasco da Gama"
+            ],
             "answer": "Cristoforo Colombo"
         },
+        {
+            "question": "Chi fu il dittatore italiano durante la Seconda Guerra Mondiale?",
+            "options": [
+                "Mussolini",
+                "Hitler",
+                "Stalin",
+                "Churchill"
+            ],
+            "answer": "Mussolini"
+        },
+        {
+            "question": "In quale anno avvenne la Rivoluzione Francese?",
+            "options": [
+                "1776",
+                "1789",
+                "1812",
+                "1848"
+            ],
+            "answer": "1789"
+        },
+        {
+            "question": "Quale civiltà costruì le piramidi di Giza?",
+            "options": [
+                "Romani",
+                "Maya",
+                "Egizi",
+                "Greci"
+            ],
+            "answer": "Egizi"
+        }
     ]
 }
+
+
+
+
+
+
 
 # ---------- INIZIALIZZAZIONE ----------
 if "category" not in st.session_state:
